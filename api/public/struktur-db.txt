@@ -1,0 +1,116 @@
+# Table List
+
+- menu -/
+	- id - pk - tinyIncrements
+	- nama - varchar(50)
+	- link - varchar(50)
+	- icon - varchar(30)
+	- id_menu - tinyint() - fk
+
+- siswa -/
+	- id - pk - increments
+	- nim - varchar(11) - unique
+	- nama - varchar(40)
+	- gender - enum(L,P)
+	- tanggal_lahir - date
+	- tempat_lahir - varchar(30)
+	- foto - varchar(?)
+	- id_rombel - ui - fk
+
+- agama (default data) -/
+	- id - pk - tinyIncrements
+	- nama - varchar(30)
+
+- mapel (default data) -
+	- id - tinyIncrements - pk
+	- kode - varchar(4) - unique
+	- level?
+	- nama - varchar(30)
+
+- mapel_sekolah -/
+	- id - increments - pk
+	- id_mapel - varchar(4) - fk
+	- id_sekolah - unsignedInteger - fk
+
+- ruangan -/
+	- id - increments - pk
+	- kode - varchar(4)
+	- nama - varchar(30)
+
+- jurusan -/
+	- id - increments - pk
+	- kode - varchar(4)
+	- nama - varchar(30)
+
+- tahun_akademik (default data? pivot table?) -/
+	- id - smallIncrements - pk
+	- tahun - varchar(10)
+	- status - bool
+
+- kurikulum -/
+	- id - increments - pk
+	- nama - varchar(30)
+	- status - bool
+
+- sekolah -/
+	- id - increments - pk
+	- nama - varchar(30)
+	- id_jenjang - unsignedTinyInteger
+	- alamat - text?
+	- email - varchar(30)
+	- telepon - varchar(14)
+
+- jenjang (default data) -/
+	- id - tinyIncrements? - pk
+	- nama - varchar(10)
+	- jumlah_kelas - tinyint
+
+- guru -/
+	- id - increments - pk
+	- nuptk - varchar(16)
+	- nama - varchar(30)
+	- gender - enum(L,P)
+
+- kurikulum_detail -/
+	- id - increments - pk
+	- id_kurikulum - unsignedInteger - fk
+	- id_mapel_sekolah - unsignedInteger - fk
+	- id_jurusan - varchar(4) - fk
+	- kelas - tinyint
+
+- jadwal -/
+	- id
+	- id_tahun_akademik
+	- id_jurusan
+	- id_mapel
+	- id_guru
+	- id_rombel
+	- id_ruangan
+	- kelas
+	- jam - inputmask
+	- semester
+	- hari
+
+- rombel -/
+	- id
+	- nama
+	- kelas
+	- id_jurusan
+
+- walikelas -/
+	- id
+	- id_guru
+	- id_tahun_akademik
+	- id_rombel
+
+- pengguna -/
+	- id
+	- id_level
+	- nama
+	- email
+	- password
+	- foto
+
+- level -/
+	- id
+	- nama
