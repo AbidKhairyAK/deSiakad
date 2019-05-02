@@ -2,26 +2,28 @@
 	<transition name="modal">
 		<div class="modal-mask" v-if="status">
 			<div class="modal-wrapper">
-
-				<div class="modal-dialog modal-dialog-scrollable" role="document">
-					<div class="modal-content">
-						<div class="modal-header bg-primary">
-							<h5 class="modal-title text-white font-weight-bold">
-								{{ title }}
-							</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="$emit('close')">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<slot></slot>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" @click="$emit('close')">Kembali</button>
-							<button v-if="sendButton" type="button" class="btn btn-primary" @click="$emit('send')">Kirim</button>
+					
+				<form @submit.prevent="$emit('send')">
+					<div class="modal-dialog modal-dialog-scrollable" role="document">
+						<div class="modal-content">
+							<div class="modal-header bg-primary">
+								<h5 class="modal-title text-white font-weight-bold">
+									{{ title }}
+								</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="$emit('close')">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<slot></slot>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" @click="$emit('close')">Kembali</button>
+								<button v-if="sendButton" type="submit" class="btn btn-primary">Kirim</button>
+							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 
 			</div>
 		</div>

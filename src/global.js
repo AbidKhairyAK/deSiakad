@@ -5,6 +5,7 @@ import Vuelidate from 'vuelidate';
 import VuelidateErrorExtractor, { templates } from 'vuelidate-error-extractor';
 
 import axios from 'axios';
+import lodash from 'lodash';
 import qs from 'querystring';
 
 import Box from '@/components/items/Box';
@@ -32,6 +33,7 @@ Vue.use(Vuelidate);
 Vue.use(VuelidateErrorExtractor, vee_config);
 
 Vue.prototype.$axios = axios;
+Vue.prototype.$_ = lodash;
 Vue.prototype.$qs = qs;
 Vue.prototype.$url = 'http://localhost:8000';
 Vue.prototype.$url_config = url_config;

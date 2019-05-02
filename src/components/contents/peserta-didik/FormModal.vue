@@ -88,19 +88,20 @@
 				return img ? require(`@/assets/siswa/${img}`) : '';
 			},
 			getSelect() {
-				this.$axios.get(`${this.$url}/rombel`).then((response) => {
+				this.$axios.get(`${this.$url}/rombel/list`).then((response) => {
 					this.select.rombel = response.data;
 				});
-				this.$axios.get(`${this.$url}/agama`).then((response) => {
+				this.$axios.get(`${this.$url}/agama/list`).then((response) => {
 					this.select.agama = response.data;
 				});
-				this.$axios.get(`${this.$url}/tahun-akademik`).then((response) => {
+				this.$axios.get(`${this.$url}/tahun-akademik/list`).then((response) => {
 					this.select.tahun_akademik = response.data;
 				});
 			},
 			sendData() {
 				this.$v.form.$touch();
 				if (this.$v.form.$error) return;
+				this.$v.form.$reset();
 
 				this.$emit('sendData', this.form);
 			},
@@ -115,7 +116,7 @@
 				return this.status == 'edit' ? 'Edit Data' : 'Tambah Data';
 			},
 			form() {
-				return this.item == {} ? this.default_format : this.item;
+				return this.$_.isEmpty(this.item) ? Object.assign({}, this.default_format) : this.item;
 			}
 		},
 

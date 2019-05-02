@@ -49,14 +49,13 @@
 		data: () => ({
 			rombel: [],
 			agama: [],
-			search: '',
 		}),
 		methods: {
 			getFilters() {
-				this.$axios.get(`${this.$url}/rombel`).then((response) => {
+				this.$axios.get(`${this.$url}/rombel/list`).then((response) => {
 					this.rombel = response.data;
 				});
-				this.$axios.get(`${this.$url}/agama`).then((response) => {
+				this.$axios.get(`${this.$url}/agama/list`).then((response) => {
 					this.agama = response.data;
 				});
 			}

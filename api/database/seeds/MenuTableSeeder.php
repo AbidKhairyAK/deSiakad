@@ -15,6 +15,12 @@ class MenuTableSeeder extends Seeder
 
             // Parents
         	[
+                'nama' => 'Beranda',
+                'link' => '/beranda',
+                'icon' => 'fa-home',
+                'submenu' => 0
+            ],
+            [
         		'nama' => 'Data Master',
         		'link' => '#',
                 'icon' => 'fa-bars',
@@ -64,61 +70,55 @@ class MenuTableSeeder extends Seeder
                 'nama' => 'Mata Pelajaran',
                 'link' => '/mapel',
                 'icon' => 'fa-book',
-                'submenu' => 1
+                'submenu' => 2
             ],
             [
                 'nama' => 'Ruangan Kelas',
                 'link' => '/ruangan',
                 'icon' => 'fa-building',
-                'submenu' => 1
-            ],
-            [
-                'nama' => 'Jurusan',
-                'link' => '/jurusan',
-                'icon' => 'fa-th-large',
-                'submenu' => 1
+                'submenu' => 2
             ],
             [
                 'nama' => 'Tahun Akademik',
                 'link' => '/tahun-akademik',
                 'icon' => 'fa-calendar-alt',
-                'submenu' => 1
+                'submenu' => 2
             ],
             [
                 'nama' => 'Rombongan Belajar',
                 'link' => '/rombel',
                 'icon' => 'fa-users',
-                'submenu' => 1
+                'submenu' => 2
             ],
             [
                 'nama' => 'Kurikulum',
                 'link' => '/kurikulum',
                 'icon' => 'fa-newspaper',
-                'submenu' => 1
+                'submenu' => 2
             ],
             [
                 'nama' => 'Daftar Siswa',
                 'link' => '/siswa',
                 'icon' => 'fa-users',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Peserta Didik',
                 'link' => '/peserta-didik',
                 'icon' => 'fa-pencil-alt',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Daftar Guru',
                 'link' => '/guru',
                 'icon' => 'fa-graduation-cap',
-                'submenu' => 3
+                'submenu' => 4
             ],
             [
                 'nama' => 'Wali Kelas',
                 'link' => '/walikelas',
                 'icon' => 'fa-users',
-                'submenu' => 3
+                'submenu' => 4
             ],
         ];
 

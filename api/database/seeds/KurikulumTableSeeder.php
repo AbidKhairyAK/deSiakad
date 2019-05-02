@@ -25,7 +25,7 @@ class KurikulumTableSeeder extends Seeder
         for ($i=0; $i < 5; $i++) { 
         	$data[$i] = [
                 'nama' => $kurikulum[$i],
-                'status' => rand(0,1),
+                'status' => $i == 4 ? 1 : 0,
         		'created_at' => $faker->date(),
         		'updated_at' => $faker->date(),
         	];

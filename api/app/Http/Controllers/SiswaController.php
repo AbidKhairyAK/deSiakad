@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Siswa;
-use App\Http\Resources\SiswaCollection;
 use App\Http\Resources\SiswaResource;
 
 class SiswaController extends Controller
