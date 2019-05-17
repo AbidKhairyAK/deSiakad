@@ -17,8 +17,8 @@ class CreateSiswaTable extends Migration
             $table->increments('id');
             $table->unsignedSmallInteger('id_rombel')->nullable();
             $table->unsignedTinyInteger('id_agama');
-            $table->unsignedTinyInteger('id_tahun_akademik');
-            $table->string('nim', 11)->unique();
+            $table->unsignedTinyInteger('id_angkatan');
+            $table->string('nis', 11)->unique();
             $table->string('nama', 50);
             $table->enum('gender', ['L', 'P']);
             $table->date('tanggal_lahir');

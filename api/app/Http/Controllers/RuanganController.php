@@ -8,6 +8,13 @@ use App\Http\Resources\RuanganResource;
 
 class RuanganController extends Controller
 {
+    public function list()
+    {
+        $ruangan = app('db')->table('ruangan')->get();
+
+        return response()->json($ruangan);
+    }
+
     public function index(Request $request)
     {
         $search = $request->get('search');
@@ -27,15 +34,11 @@ class RuanganController extends Controller
     public function create(Request $request)
     {
         $ruangan = Ruangan::create($request->all());
-
-        return response()->json(['id' => $ruangan->id]);
     }
 
     public function update(Request $request, $id)
     {
         $ruangan = Ruangan::find($id)->update($request->all());
-
-        return response()->json(['id' => $id]);
     }
 
     public function destroy($id)

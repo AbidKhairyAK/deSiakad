@@ -4,10 +4,10 @@
 		<div class="form-group">
 			<label class="font-weight-bold small">Pencarian:</label>
 			<input class="form-control" placeholder="cari..." v-model="input.search">
-			<small class="text-muted">Cari berdasarkan nama, nim, tempat atau tanggal lahir</small>
+			<small class="text-muted">Cari berdasarkan nama, nis, tempat atau tanggal lahir</small>
 		</div>
 		<div class="form-group">
-			<label class="font-weight-bold small">Rombongan Belajar:</label>
+			<label class="font-weight-bold small">Rombel</label>
 			<select class="form-control" v-model="input.rombel">
 				<option value="">Semua</option>
 				<option v-for="item in rombel" 

@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory;
 
-class JamPelajaranTableSeeder extends Seeder
+class AngkatanTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,19 +14,19 @@ class JamPelajaranTableSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create('id_ID');
-        $jam = [
-            '07:00-08:00', '08:00-09:00', '09:00-10:00', '10:00-11:00', '11:00-12:00', '12:00-13:00'
-        ];
+        $tahun_masuk = 2010;
+        $tahun_keluar = 2016;
 
-        for ($i=0; $i < 6; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
         	$data[$i] = [
-                'jam' => $jam[$i],
+                'tahun' => ($tahun_masuk + $i) . '-' . ($tahun_keluar + $i),
+                'status' => $i >= 4 ? 1 : 0,
         		'created_at' => $faker->date(),
         		'updated_at' => $faker->date(),
         	];
         }
 
-        DB::table('jam_pelajaran')->truncate();
-        DB::table('jam_pelajaran')->insert($data);
+        DB::table('angkatan')->truncate();
+        DB::table('angkatan')->insert($data);
     }
 }

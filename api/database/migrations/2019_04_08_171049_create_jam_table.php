@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJamPelajaranTable extends Migration
+class CreateJamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateJamPelajaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('jam_pelajaran', function (Blueprint $table) {
-            $table->smallIncrements('id');
-            $table->string('jam', 11);
+        Schema::create('jam', function (Blueprint $table) {
+            $table->tinyIncrements('id');
+            $table->string('pukul', 5);
             $table->timestamps();
         });
     }

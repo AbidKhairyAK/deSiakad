@@ -18,8 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call('AgamaTableSeeder');
         $this->call('SiswaTableSeeder');
         $this->call('MapelTableSeeder');
-        $this->call('JamPelajaranTableSeeder');
+        $this->call('JamTableSeeder');
+        $this->call('HariTableSeeder');
         $this->call('RuanganTableSeeder');
+        $this->call('AngkatanTableSeeder');
         $this->call('TahunAkademikTableSeeder');
         $this->call('KurikulumTableSeeder');
         $this->call('KurikulumDetailTableSeeder');

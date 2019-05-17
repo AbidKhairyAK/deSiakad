@@ -19,7 +19,7 @@ class MakeRelation extends Migration
 
         Schema::table('siswa', function (Blueprint $table) {
             $table->foreign('id_rombel')->references('id')->on('rombel');
-            $table->foreign('id_tahun_akademik')->references('id')->on('tahun_akademik');
+            $table->foreign('id_angkatan')->references('id')->on('angkatan');
             $table->foreign('id_agama')->references('id')->on('agama');
         });
 
@@ -38,7 +38,9 @@ class MakeRelation extends Migration
             $table->foreign('id_mapel')->references('id')->on('mapel');
             $table->foreign('id_guru')->references('id')->on('guru');
             $table->foreign('id_ruangan')->references('id')->on('ruangan');
-            $table->foreign('id_jam_pelajaran')->references('id')->on('jam_pelajaran');
+            $table->foreign('id_jam_mulai')->references('id')->on('jam');
+            $table->foreign('id_jam_selesai')->references('id')->on('jam');
+            $table->foreign('id_hari')->references('id')->on('hari');
         });
 
         Schema::table('walikelas', function (Blueprint $table) {

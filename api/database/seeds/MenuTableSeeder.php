@@ -58,12 +58,18 @@ class MenuTableSeeder extends Seeder
         		'icon' => 'fa-file-excel',
         		'submenu' => 0
         	],
-        	[
-        		'nama' => 'Pengguna Sistem',
-        		'link' => '/pengguna',
-        		'icon' => 'fa-cubes',
-        		'submenu' => 0
-        	],
+            [
+                'nama' => 'Editor',
+                'link' => '#',
+                'icon' => 'fa-edit',
+                'submenu' => 0
+            ],
+            [
+                'nama' => 'Pengaturan',
+                'link' => '#',
+                'icon' => 'fa-cog',
+                'submenu' => 0
+            ],
 
             // Childs
             [
@@ -82,6 +88,12 @@ class MenuTableSeeder extends Seeder
                 'nama' => 'Tahun Akademik',
                 'link' => '/tahun-akademik',
                 'icon' => 'fa-calendar-alt',
+                'submenu' => 2
+            ],
+            [
+                'nama' => 'Angkatan',
+                'link' => '/angkatan',
+                'icon' => 'fa-list-alt',
                 'submenu' => 2
             ],
             [
@@ -119,6 +131,30 @@ class MenuTableSeeder extends Seeder
                 'link' => '/walikelas',
                 'icon' => 'fa-users',
                 'submenu' => 4
+            ],
+            [
+                'nama' => 'Peserta Didik Editor',
+                'link' => '/peserta-didik-editor',
+                'icon' => 'fa-pencil-alt',
+                'submenu' => 8
+            ],
+            [
+                'nama' => 'Jadwal Pelajaran Editor',
+                'link' => '/jadwal-pelajaran-editor',
+                'icon' => 'fa-calendar',
+                'submenu' => 8
+            ],
+            [
+                'nama' => 'Pengguna Sistem',
+                'link' => '/pengguna',
+                'icon' => 'fa-cubes',
+                'submenu' => 9
+            ],
+            [
+                'nama' => 'Hak Akses',
+                'link' => '/hak-akses',
+                'icon' => 'fa-lock',
+                'submenu' => 9
             ],
         ];
 

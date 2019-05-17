@@ -22,7 +22,7 @@ class KurikulumController extends Controller
 
         $kurikulum = Kurikulum::orderBy('nama', 'desc');
 
-        if (!empty($status)) {
+        if (!empty($status) || $status === '0') {
             $filter[] = [ 'status', '=', $status];
         }
 
@@ -31,8 +31,7 @@ class KurikulumController extends Controller
         }
 
         if (!empty($search)) {
-            $kurikulum = $kurikulum->where('nama', 'like', "%$search%")
-                    				->orWhere('status', 'like', "%$search%");
+            $kurikulum = $kurikulum->where('nama', 'like', "%$search%");
         }
 
         $kurikulum = $kurikulum->paginate(15);
@@ -43,15 +42,11 @@ class KurikulumController extends Controller
     public function create(Request $request)
     {
         $kurikulum = Kurikulum::create($request->all());
-
-        return response()->json(['id' => $kurikulum->id]);
     }
 
     public function update(Request $request, $id)
     {
         $kurikulum = Kurikulum::find($id)->update($request->all());
-
-        return response()->json(['id' => $id]);
     }
 
     public function destroy($id)

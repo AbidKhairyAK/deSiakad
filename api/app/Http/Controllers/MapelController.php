@@ -8,6 +8,13 @@ use App\Http\Resources\MapelResource;
 
 class MapelController extends Controller
 {
+    public function list()
+    {
+        $mapel = app('db')->table('mapel')->get();
+
+        return response()->json($mapel);
+    }
+
     public function index(Request $request)
     {
         $search = $request->get('search');
@@ -27,15 +34,11 @@ class MapelController extends Controller
     public function create(Request $request)
     {
         $mapel = Mapel::create($request->all());
-
-        return response()->json(['id' => $mapel->id]);
     }
 
     public function update(Request $request, $id)
     {
         $mapel = Mapel::find($id)->update($request->all());
-
-        return response()->json(['id' => $id]);
     }
 
     public function destroy($id)

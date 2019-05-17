@@ -30,7 +30,7 @@ class TahunAkademikTableSeeder extends Seeder
         for ($i=0; $i < 10; $i++) { 
         	$data[$i] = [
                 'tahun' => $tahun_akademik[$i],
-                'status' => $i > 3,
+                'status' => $i == 8,
         		'created_at' => $faker->date(),
         		'updated_at' => $faker->date(),
         	];

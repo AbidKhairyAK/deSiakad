@@ -9,7 +9,7 @@ class Siswa extends Model
     protected $table = 'siswa';
 
     protected $fillable = [
-    	'id_rombel', 'id_agama', 'id_tahun_akademik', 'nim', 'nama', 'gender', 'tanggal_lahir', 'tempat_lahir', 'foto'
+    	'id_rombel','id_angkatan', 'id_agama', 'nis', 'nama', 'gender', 'tanggal_lahir', 'tempat_lahir', 'foto'
     ];
 
     public function rombel()
@@ -22,8 +22,8 @@ class Siswa extends Model
     	return $this->belongsTo(Agama::class, 'id_agama');
     }
 
-    public function tahun_akademik()
+    public function angkatan()
     {
-    	return $this->belongsTo(TahunAkademik::class, 'id_tahun_akademik');
+    	return $this->belongsTo(Angkatan::class, 'id_angkatan');
     }
 }

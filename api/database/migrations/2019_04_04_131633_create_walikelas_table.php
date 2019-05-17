@@ -13,6 +13,7 @@ class CreateWalikelasTable extends Migration
      */
     public function up()
     {
+        // PERBAIKI SISTEM WALIKELAS DAN GURU
         Schema::create('walikelas', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->unsignedSmallInteger('id_guru');

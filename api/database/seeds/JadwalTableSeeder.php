@@ -15,21 +15,21 @@ class JadwalTableSeeder extends Seeder
     {
         $faker = Factory::create('id_ID');
 
-        for ($semester=1; $semester <= 2; $semester++) { 
-            for ($rombel=1; $rombel <= 10; $rombel++) { 
-                for ($hari=1; $hari <= 7; $hari++) { 
-                    for ($jam=1; $jam <= 6; $jam++) { 
-                    	$data[] = [
+        for ($rombel=1; $rombel <= 10; $rombel++) { 
+            for ($hari=1; $hari <= 6; $hari++) { 
+                for ($jam=1; $jam <= 13; $jam++) {
+                    if ($jam % 2) {
+                        $data[] = [
                             'id_rombel' => $rombel,
-                            'id_mapel' => rand(1, 10),
-                            'id_guru' => rand(1, 10),
-                            'id_ruangan' => $rombel,
-                            'id_jam_pelajaran' => $jam,
-                            'hari' => $hari,
-                            'semester' => $semester,
-                    		'created_at' => $faker->date(),
-                    		'updated_at' => $faker->date(),
-                    	];
+                            'id_mapel' => $jam == 5 || $jam == 11 ? 1 : rand(2, 10),
+                            'id_guru' => $jam == 5 || $jam == 11 ? null : rand(1, 10),
+                            'id_ruangan' => $jam == 5 || $jam == 11 ? null : $rombel,
+                            'id_jam_mulai' => $jam,
+                            'id_jam_selesai' => $jam + 2,
+                            'id_hari' => $hari,
+                            'created_at' => $faker->date(),
+                            'updated_at' => $faker->date(),
+                        ];
                     }
                 }
             }

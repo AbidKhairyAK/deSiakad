@@ -16,9 +16,9 @@ class SiswaTableSeeder extends Seeder
         $faker = Factory::create('id_ID');
 
         for ($i=0; $i < 100; $i++) {
-            $tahun = rand(1,10);
+            $angkatan = rand(1,10);
 
-            switch ($tahun) {
+            switch ($angkatan) {
                 case 5: $rombel = rand(1,2); break;
                 case 6: $rombel = rand(3,4); break;
                 case 7: $rombel = rand(5,6); break;
@@ -31,8 +31,8 @@ class SiswaTableSeeder extends Seeder
         	$data[$i] = [
                 'id_rombel' => $rombel,
                 'id_agama' => $faker->boolean(80) ?: rand(2,5),
-        		'id_tahun_akademik' => $tahun,
-        		'nim' => $faker->isbn10,
+        		'id_angkatan' => $angkatan,
+        		'nis' => $faker->isbn10,
         		'nama' => $faker->name(),
         		'gender' => rand(0,1) ? 'L' : 'P',
         		'tanggal_lahir' => $faker->date(),

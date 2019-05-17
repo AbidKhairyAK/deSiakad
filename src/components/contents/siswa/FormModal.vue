@@ -6,8 +6,8 @@
 		sendButton
 	>
 		<form-wrapper :validator="$v.form" class="row">
-			<form-field name="nim" label="NIM" grid="col-sm-12">
-				<input type="number" class="form-control" v-model="form.nim" @input="$v.form.nim.$touch()">
+			<form-field name="nis" label="NIS" grid="col-sm-12">
+				<input type="number" class="form-control" v-model="form.nis" @input="$v.form.nis.$touch()">
 			</form-field>
 			<form-field name="nama" label="Nama Siswa" grid="col-sm-8">
 				<input type="text" class="form-control" v-model="form.nama" @input="$v.form.nama.$touch()">
@@ -24,7 +24,7 @@
 			<form-field name="tanggal_lahir" label="Tanggal Lahir" grid="col-sm-7">
 				<input type="date" class="form-control" v-model="form.tanggal_lahir" @input="$v.form.tanggal_lahir.$touch()">
 			</form-field>
-			<form-field name="id_agama" label="Agama" grid="col-sm-4">
+			<form-field name="id_agama" label="Agama" grid="col-sm-6">
 				<select class="form-control" v-model="form.id_agama" @change="$v.form.id_agama.$touch()">
 					<option v-for="item in select.agama" 
 						:key="item.id"
@@ -34,23 +34,13 @@
 					</option>
 				</select>
 			</form-field>
-			<form-field name="id_tahun_akademik" label="Tahun Akademik" grid="col-sm-4">
-				<select class="form-control" v-model="form.id_tahun_akademik" @change="$v.form.id_tahun_akademik.$touch()">
-					<option v-for="item in select.tahun_akademik" 
+			<form-field name="id_angkatan" label="Angkatan" grid="col-sm-6">
+				<select class="form-control" v-model="form.id_angkatan" @change="$v.form.id_angkatan.$touch()">
+					<option v-for="item in select.angkatan" 
 						:key="item.id"
 						:value="item.id"
 					>
 						{{ item.tahun }}
-					</option>
-				</select>
-			</form-field>
-			<form-field name="id_rombel" label="Rombel" grid="col-sm-4">
-				<select class="form-control" v-model="form.id_rombel" @change="$v.form.id_rombel.$touch()">
-					<option v-for="item in select.rombel" 
-						:key="item.id"
-						:value="item.id"
-					>
-						{{ item.nama }}
 					</option>
 				</select>
 			</form-field>
@@ -76,10 +66,10 @@
 
 		data: () => ({
 			select: {
-				rombel: [], agama: [], tahun_akademik: []
+				angkatan: [], agama: []
 			},
 			default_format: {
-				id: '', id_rombel: '', id_agama: '', id_tahun_akademik: '', nim: '', nama: '', gender: '', tanggal_lahir: '', tempat_lahir: '', foto: '', foto_data: null,
+				id: '', id_agama: '', id_angkatan: '', nis: '', nama: '', gender: '', tanggal_lahir: '', tempat_lahir: '', foto: '', foto_data: null,
 			},
 		}),
 
@@ -88,14 +78,11 @@
 				return img ? require(`@/assets/siswa/${img}`) : '';
 			},
 			getSelect() {
-				this.$axios.get(`${this.$url}/rombel/list`).then((response) => {
-					this.select.rombel = response.data;
+				this.$axios.get(`${this.$url}/angkatan/list`).then((response) => {
+					this.select.angkatan = response.data;
 				});
 				this.$axios.get(`${this.$url}/agama/list`).then((response) => {
 					this.select.agama = response.data;
-				});
-				this.$axios.get(`${this.$url}/tahun-akademik/list`).then((response) => {
-					this.select.tahun_akademik = response.data;
 				});
 			},
 			sendData() {
@@ -122,10 +109,9 @@
 
 		validations: {
 			form: {
-				id_rombel: { required }, 
-				id_agama: { required }, 
-				id_tahun_akademik: { required }, 
-				nim: { required, maxLength: maxLength(11) }, 
+				id_angkatan: { required },
+				id_agama: { required },
+				nis: { required, maxLength: maxLength(11) }, 
 				nama: { required, maxLength: maxLength(50) }, 
 				gender: { required }, 
 				tanggal_lahir: { required }, 

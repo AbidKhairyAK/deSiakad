@@ -17,9 +17,40 @@ class SiswaController extends Controller
 
     public function index(Request $request)
     {
-        $siswa = Siswa::with(['rombel', 'agama', 'tahun_akademik'])
-            ->orderBy('id_rombel')->orderBy('nama')
-            ->paginate(15);
+        $angkatan = $request->get('angkatan');
+        $agama = $request->get('agama');
+        $gender = $request->get('gender');
+        $search = $request->get('search');
+
+        $siswa = Siswa::with(['angkatan', 'agama'])
+            ->orderBy('id_angkatan', 'desc')->orderBy('nama');
+
+        if (!empty($angkatan)) {
+            $filter[] = [ 'id_angkatan', '=', $angkatan];
+        }
+
+        if (!empty($agama)) {
+            $filter[] = [ 'id_agama', '=', $agama];
+        }
+
+        if (!empty($gender)) {
+            $filter[] = [ 'gender', '=', $gender];
+        }
+
+        if (isset($filter)) {
+            $siswa = $siswa->where($filter);
+        }
+
+        if (!empty($search)) {
+            $siswa = $siswa->where(function($query) use ($search) {
+                $query->where('nis', 'like', "%$search%")
+                    ->orWhere('nama', 'like', "%$search%")
+                    ->orWhere('tempat_lahir', 'like', "%$search%")
+                    ->orWhere('tanggal_lahir', 'like', "%$search%");
+            });
+        }
+            
+        $siswa = $siswa->paginate(15);
 
         return SiswaResource::collection($siswa);
     }
@@ -31,7 +62,7 @@ class SiswaController extends Controller
         $gender = $request->get('gender');
         $search = $request->get('search');
 
-        $siswa = Siswa::with(['rombel', 'agama', 'tahun_akademik'])
+        $siswa = Siswa::with(['rombel', 'agama'])
             ->orderBy('id_rombel')->orderBy('nama')
             ->whereNotNull('id_rombel');
 
@@ -53,13 +84,12 @@ class SiswaController extends Controller
 
         if (!empty($search)) {
             $siswa = $siswa->where(function($query) use ($search) {
-                $query->where('nim', 'like', "%$search%")
+                $query->where('nis', 'like', "%$search%")
                     ->orWhere('nama', 'like', "%$search%")
                     ->orWhere('tempat_lahir', 'like', "%$search%")
                     ->orWhere('tanggal_lahir', 'like', "%$search%");
             });
         }
-
             
         $siswa = $siswa->paginate(15);
 

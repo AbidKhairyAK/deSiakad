@@ -17,11 +17,11 @@ class CreateJadwalTable extends Migration
             $table->increments('id');
             $table->unsignedSmallInteger('id_rombel');
             $table->unsignedSmallInteger('id_mapel');
-            $table->unsignedSmallInteger('id_guru');
-            $table->unsignedSmallInteger('id_ruangan');
-            $table->unsignedSmallInteger('id_jam_pelajaran');
-            $table->enum('hari', ['1', '2', '3', '4', '5', '6', '7']);
-            $table->enum('semester', ['1', '2']);
+            $table->unsignedSmallInteger('id_guru')->nullable();
+            $table->unsignedSmallInteger('id_ruangan')->nullable();
+            $table->unsignedTinyInteger('id_jam_mulai');
+            $table->unsignedTinyInteger('id_jam_selesai');
+            $table->unsignedTinyInteger('id_hari');
             $table->timestamps();
         });
     }

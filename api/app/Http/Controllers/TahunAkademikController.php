@@ -22,7 +22,7 @@ class TahunAkademikController extends Controller
 
         $tahun_akademik = TahunAkademik::orderBy('tahun', 'desc');
 
-        if (!empty($status)) {
+        if (!empty($status) || $status === '0') {
             $filter[] = [ 'status', '=', $status];
         }
 
@@ -31,8 +31,7 @@ class TahunAkademikController extends Controller
         }
 
         if (!empty($search)) {
-            $tahun_akademik = $tahun_akademik->where('tahun', 'like', "%$search%")
-                    						->orWhere('status', 'like', "%$search%");
+            $tahun_akademik = $tahun_akademik->where('tahun', 'like', "%$search%");
         }
 
         $tahun_akademik = $tahun_akademik->paginate(15);
@@ -43,15 +42,11 @@ class TahunAkademikController extends Controller
     public function create(Request $request)
     {
         $tahun_akademik = TahunAkademik::create($request->all());
-
-        return response()->json(['id' => $tahun_akademik->id]);
     }
 
     public function update(Request $request, $id)
     {
         $tahun_akademik = TahunAkademik::find($id)->update($request->all());
-
-        return response()->json(['id' => $id]);
     }
 
     public function destroy($id)

@@ -35,15 +35,11 @@ class RombelController extends Controller
     public function create(Request $request)
     {
         $rombel = Rombel::create($request->all());
-
-        return response()->json(['id' => $rombel->id]);
     }
 
     public function update(Request $request, $id)
     {
         $rombel = Rombel::find($id)->update($request->all());
-
-        return response()->json(['id' => $id]);
     }
 
     public function destroy($id)

@@ -15,6 +15,7 @@ class MapelTableSeeder extends Seeder
     {
         $faker = Factory::create('id_ID');
         $mapel = [
+            'Istirahat',
             'Ilmu Pengetahuan Alam',
             'Ilmu Pengetahuan Sosial',
             'Matematika',
@@ -27,7 +28,7 @@ class MapelTableSeeder extends Seeder
             'Seni Budaya dan Keterampilan'
         ];
         $kode = [
-            'IPA', 'IPS', 'MTK', 'PENJAS', 'BIND', 'BING', 'PPKN', 'PAI', 'BDAE', 'SBK' 
+            'ISTIRAHAT', 'IPA', 'IPS', 'MTK', 'PENJAS', 'BIND', 'BING', 'PPKN', 'PAI', 'BDAE', 'SBK' 
         ];
 
         for ($i=0; $i < 10; $i++) { 

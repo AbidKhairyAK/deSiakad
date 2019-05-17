@@ -43,14 +43,14 @@
 				:id="'collapse' + nav.id" 
 				:aria-labelledby="'heading' + nav.id"
 			>
-				<div class="py-2 collapse-inner rounded" style="background-color: rgba(255,255,255, 0.2);">
-					<h6 class="collapse-header text-white-50">{{ nav.nama }}</h6>
+				<div class="py-2 collapse-inner rounded">
+					<h6 class="collapse-header">{{ nav.nama }}</h6>
 					<router-link class="collapse-item text-white"
 						v-for="subnav in childNavs(nav.id)"
 						:key="'subnav'+subnav.id"
 						:to="subnav.link"
 					>
-						<i :class="['text-white-50 fas fa-fw', subnav.icon]"></i>
+						<i :class="['fas fa-fw', subnav.icon]"></i>
 						{{ subnav.nama }}
 					</router-link>
 				</div>

@@ -12,8 +12,13 @@ class TahunAkademik extends Model
     	'tahun', 'status'
     ];
 
-    // public function siswa()
+    // public function walikelas()
     // {
-    // 	return $this->hasMany(Siswa::class, 'id_tahun_akademik');
+    // 	return $this->hasMany(Walikelas::class, 'id_tahun_akademik');
+    // }
+
+    // public function Jadwal()
+    // {
+    // 	return $this->hasMany(Jadwal::class, 'id_tahun_akademik');
     // }
 }
