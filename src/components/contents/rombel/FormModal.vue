@@ -7,13 +7,13 @@
 	>
 		<form-wrapper :validator="$v.form" class="row">
 			<form-field name="kode" label="Kode" grid="col-sm-3">
-				<input type="text" class="form-control" v-model="form.kode" @input="$v.form.kode.$touch()">
+				<input type="text" class="form-control" v-model="$v.form.kode.$model">
 			</form-field>
 			<form-field name="nama" label="Nama Ruangan" grid="col-sm-7">
-				<input type="text" class="form-control" v-model="form.nama" @input="$v.form.nama.$touch()">
+				<input type="text" class="form-control" v-model="$v.form.nama.$model">
 			</form-field>
 			<form-field name="kelas" label="Kelas" grid="col-sm-2">
-				<select class="form-control" v-model="form.kelas" @change="$v.form.kelas.$touch()">
+				<select class="form-control" v-model="$v.form.kelas.$model">
 					<option v-for="n in 6" :key="'n'+n">{{ n }}</option>
 				</select>
 			</form-field>
@@ -30,7 +30,10 @@
 		props: ['status', 'item'],
 
 		data: () => ({
-			default_format: {
+			form: {
+				kode: '', nama: '', kelas: 0,
+			},
+			default_form: {
 				kode: '', nama: '', kelas: 0,
 			},
 		}),
@@ -53,9 +56,6 @@
 			form_title() {
 				return this.status == 'edit' ? 'Edit Data' : 'Tambah Data';
 			},
-			form() {
-				return this.$_.isEmpty(this.item) ? Object.assign({}, this.default_format) : this.item;
-			}
 		},
 
 		validations: {
@@ -65,5 +65,11 @@
 				kelas: { required },
 			}
 		},
+
+		watch: {
+			status(val) {
+				this.form = val == "create" ? Object.assign({}, this.default_form) : this.item;
+			}
+		}
 	}
 </script>

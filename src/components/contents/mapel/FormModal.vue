@@ -7,10 +7,10 @@
 	>
 		<form-wrapper :validator="$v.form" class="row">
 			<form-field name="kode" label="Kode" grid="col-sm-4">
-				<input type="text" class="form-control" v-model="form.kode" @input="$v.form.kode.$touch()">
+				<input type="text" class="form-control" v-model="$v.form.kode.$model">
 			</form-field>
 			<form-field name="nama" label="Nama Ruangan" grid="col-sm-8">
-				<input type="text" class="form-control" v-model="form.nama" @input="$v.form.nama.$touch()">
+				<input type="text" class="form-control" v-model="$v.form.nama.$model">
 			</form-field>
 		</form-wrapper>
 	</modal>
@@ -25,7 +25,10 @@
 		props: ['status', 'item'],
 
 		data: () => ({
-			default_format: {
+			form: {
+				kode: '', nama: ''
+			},
+			default_form: {
 				kode: '', nama: ''
 			},
 		}),
@@ -35,22 +38,18 @@
 				this.$v.form.$touch();
 				if (this.$v.form.$error) return;
 				this.$v.form.$reset();
-
 				this.$emit('sendData', this.form);
 			},
 			closeModal() {
 				this.$v.form.$reset();
 				this.$emit('closeModal');
-			}
+			},
 		},
 
 		computed: {
 			form_title() {
 				return this.status == 'edit' ? 'Edit Data' : 'Tambah Data';
 			},
-			form() {
-				return this.$_.isEmpty(this.item) ? Object.assign({}, this.default_format) : this.item;
-			}
 		},
 
 		validations: {
@@ -59,5 +58,11 @@
 				nama: { required, maxLength: maxLength(30) },
 			}
 		},
+
+		watch: {
+			status(val) {
+				this.form = val == "create" ? Object.assign({}, this.default_form) : this.item;
+			}
+		}
 	}
 </script>

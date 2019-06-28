@@ -93,7 +93,7 @@
 				this.mode = data.mode;
 			},
 			closeModal() {
-				this.item  = {};
+				this.item = {};
 				this.mode = null;
 			}
 		},

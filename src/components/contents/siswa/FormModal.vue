@@ -7,25 +7,25 @@
 	>
 		<form-wrapper :validator="$v.form" class="row">
 			<form-field name="nis" label="NIS" grid="col-sm-12">
-				<input type="number" class="form-control" v-model="form.nis" @input="$v.form.nis.$touch()">
+				<input type="number" class="form-control" v-model="$v.form.nis.$model">
 			</form-field>
 			<form-field name="nama" label="Nama Siswa" grid="col-sm-8">
-				<input type="text" class="form-control" v-model="form.nama" @input="$v.form.nama.$touch()">
+				<input type="text" class="form-control" v-model="$v.form.nama.$model">
 			</form-field>
 			<form-field name="gender" label="Gender" grid="col-sm-4">
-				<select class="form-control" v-model="form.gender" @change="$v.form.gender.$touch()">
+				<select class="form-control" v-model="$v.form.gender.$model">
 					<option value="L">Laki-laki</option>
 					<option value="P">Perempuan</option>
 				</select>
 			</form-field>
 			<form-field name="tempat_lahir" label="Tempat Lahir" grid="col-sm-5">
-				<input type="text" class="form-control" v-model="form.tempat_lahir" @input="$v.form.tempat_lahir.$touch()">
+				<input type="text" class="form-control" v-model="$v.form.tempat_lahir.$model">
 			</form-field>
 			<form-field name="tanggal_lahir" label="Tanggal Lahir" grid="col-sm-7">
-				<input type="date" class="form-control" v-model="form.tanggal_lahir" @input="$v.form.tanggal_lahir.$touch()">
+				<input type="date" class="form-control" v-model="$v.form.tanggal_lahir.$model">
 			</form-field>
 			<form-field name="id_agama" label="Agama" grid="col-sm-6">
-				<select class="form-control" v-model="form.id_agama" @change="$v.form.id_agama.$touch()">
+				<select class="form-control" v-model="$v.form.id_agama.$model">
 					<option v-for="item in select.agama" 
 						:key="item.id"
 						:value="item.id"
@@ -35,7 +35,7 @@
 				</select>
 			</form-field>
 			<form-field name="id_angkatan" label="Angkatan" grid="col-sm-6">
-				<select class="form-control" v-model="form.id_angkatan" @change="$v.form.id_angkatan.$touch()">
+				<select class="form-control" v-model="$v.form.id_angkatan.$model">
 					<option v-for="item in select.angkatan" 
 						:key="item.id"
 						:value="item.id"
@@ -68,7 +68,10 @@
 			select: {
 				angkatan: [], agama: []
 			},
-			default_format: {
+			form: {
+				id: '', id_agama: '', id_angkatan: '', nis: '', nama: '', gender: '', tanggal_lahir: '', tempat_lahir: '', foto: '', foto_data: null,
+			},
+			default_form: {
 				id: '', id_agama: '', id_angkatan: '', nis: '', nama: '', gender: '', tanggal_lahir: '', tempat_lahir: '', foto: '', foto_data: null,
 			},
 		}),
@@ -102,9 +105,6 @@
 			form_title() {
 				return this.status == 'edit' ? 'Edit Data' : 'Tambah Data';
 			},
-			form() {
-				return this.$_.isEmpty(this.item) ? Object.assign({}, this.default_format) : this.item;
-			}
 		},
 
 		validations: {
@@ -116,6 +116,12 @@
 				gender: { required }, 
 				tanggal_lahir: { required }, 
 				tempat_lahir: { required, maxLength: maxLength(30) },
+			}
+		},
+
+		watch: {
+			status(val) {
+				this.form = val == "create" ? Object.assign({}, this.default_form) : this.item;
 			}
 		},
 

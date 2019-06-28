@@ -1,0 +1,31 @@
+# To do list
+	- tambahkan fitur jumlah data & atur jumlah paginasi pada semua tampilan table
+	- tambahkan fitur orderby
+	- tambahkan fitur absensi murid (next version)
+	- tambahkan fitur keuangan (next version)
+		- pembayaran sppl
+		- keuangan sekolah
+	- tambahkan fitur SMS dan WA (next version)
+
+# Uncompleted Page
+	- Beranda
+	- Daftar guru
+	- walikelas
+	- sekolah
+	- jadwal pelajaran
+	- laporan nilai
+	- daftar akun
+	- hak akses
+
+# Things that need to Think
+	- field yg perlu nullable?
+	- setiap akun harus punya guru?
+	- tb walikelas dan guru digabung?
+	- tampilan beranda?
+	- Sistem rapor? (ambil data dari MIA)
+
+# doing
+	- revisi tabel guru dan pengguna
+	- setiap guru adalah pengguna, namun tidak setiap pengguna adalah guru
+	- tabel pengguna akan terisi otomatis ketika data guru baru dibuat
+	- pada form pembuatan pengguna terdapat checkbox status pengguna, guru atau bukan
