@@ -15,10 +15,10 @@ class CreatePenggunaTable extends Migration
     {
         Schema::create('pengguna', function (Blueprint $table) {
             $table->smallIncrements('id');
+            $table->unsignedSmallInteger('id_guru')->nullable();
             $table->string('nama', 50);
             $table->string('email', 50);
             $table->string('password', 60);
-            $table->string('foto', 20);
             $table->timestamps();
         });
     }

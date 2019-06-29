@@ -17,10 +17,12 @@ class GuruTableSeeder extends Seeder
 
         for ($i=1; $i <= 10; $i++) { 
         	$data[$i] = [
-                'id_pengguna' => $i,
                 'id_agama' => $faker->boolean(80) ?: rand(2,5),
+                'nik' => $faker->ean13,
                 'nuptk' => $faker->ean13,
                 'gender' => rand(0,1) ? 'L' : 'P',
+                'foto' => $faker->unixTime().'.jpg',
+                'status' => $faker->boolean(80),
         		'created_at' => $faker->date(),
         		'updated_at' => $faker->date(),
         	];

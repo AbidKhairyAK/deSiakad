@@ -2,9 +2,6 @@ import Vuex from 'vuex';
 
 const state = {
 	sidebarToggle: false,
-	peserta_didik: {
-		id: '', id_rombel: '', id_agama: '', id_tahun_akademik: '', nim: '', nama: '', gender: '', tanggal_lahir: '', tempat_lahir: ''
-	}
 };
 
 const mutations = {
@@ -14,8 +11,8 @@ const mutations = {
 };
 
 const actions = {
-	toggleSidebar(context, sidebarToggle) {
-		context.commit("TOGGLE_SIDEBAR", sidebarToggle);
+	toggleSidebar(context, params) {
+		context.commit("TOGGLE_SIDEBAR", params);
 	}
 };
 

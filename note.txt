@@ -19,13 +19,13 @@
 
 # Things that need to Think
 	- field yg perlu nullable?
-	- setiap akun harus punya guru?
 	- tb walikelas dan guru digabung?
 	- tampilan beranda?
 	- Sistem rapor? (ambil data dari MIA)
 
 # doing
 	- revisi tabel guru dan pengguna
-	- setiap guru adalah pengguna, namun tidak setiap pengguna adalah guru
-	- tabel pengguna akan terisi otomatis ketika data guru baru dibuat
-	- pada form pembuatan pengguna terdapat checkbox status pengguna, guru atau bukan
+	- daftar guru akan diisi oleh operator / admin
+	- guru hanya dapat memiliki akun apabila data nya terdaftar di sistem
+	- pengecekan NUPTK / NIK dan Status akan dilakukan sebelum guru membuat akun
+	- akun dari guru yang sudah tidak aktif akan otomatis terhapus

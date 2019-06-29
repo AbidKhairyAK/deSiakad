@@ -24,8 +24,11 @@ class MakeRelation extends Migration
         });
 
         Schema::table('guru', function (Blueprint $table) {
-            $table->foreign('id_pengguna')->references('id')->on('pengguna');
             $table->foreign('id_agama')->references('id')->on('agama');
+        });
+
+        Schema::table('pengguna', function (Blueprint $table) {
+            $table->foreign('id_guru')->references('id')->on('guru');
         });
 
         Schema::table('kurikulum_detail', function (Blueprint $table) {

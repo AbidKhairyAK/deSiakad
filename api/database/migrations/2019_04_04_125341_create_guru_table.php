@@ -15,10 +15,12 @@ class CreateGuruTable extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->unsignedSmallInteger('id_pengguna');
             $table->unsignedTinyInteger('id_agama');
-            $table->string('nuptk', 16)->unique();
+            $table->string('nik', 16)->unique();
+            $table->string('nuptk', 16)->unique()->nullable();
             $table->enum('gender', ['L', 'P']);
+            $table->string('foto', 20)->nullable();
+            $table->boolean('status');
             $table->timestamps();
         });
     }

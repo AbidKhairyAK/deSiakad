@@ -15,12 +15,12 @@ class PenggunaTableSeeder extends Seeder
     {
         $faker = Factory::create('id_ID');
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=1; $i <= 10; $i++) { 
         	$data[$i] = [
+                'id_guru' => $i % 2 ? $i : null,
                 'nama' => $faker->name(),
                 'email' => $faker->freeEmail,
                 'password' => app('hash')->make('secret'),
-                'foto' => $faker->unixTime().'.jpg',
         		'created_at' => $faker->date(),
         		'updated_at' => $faker->date(),
         	];
