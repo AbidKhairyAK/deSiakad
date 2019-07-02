@@ -39,7 +39,7 @@
 	export default {
 		methods: {
 			sendData() {
-				this.$router.push('register');
+				this.$router.push('siswa');
 			}
 		}
 	}

@@ -55,47 +55,6 @@ class SiswaController extends Controller
         return SiswaResource::collection($siswa);
     }
 
-    public function pesertaDidik(Request $request)
-    {
-        $rombel = $request->get('rombel');
-        $agama = $request->get('agama');
-        $gender = $request->get('gender');
-        $search = $request->get('search');
-
-        $siswa = Siswa::with(['rombel', 'agama'])
-            ->orderBy('id_rombel')->orderBy('nama')
-            ->whereNotNull('id_rombel');
-
-        if (!empty($rombel)) {
-            $filter[] = [ 'id_rombel', '=', $rombel];
-        }
-
-        if (!empty($agama)) {
-            $filter[] = [ 'id_agama', '=', $agama];
-        }
-
-        if (!empty($gender)) {
-            $filter[] = [ 'gender', '=', $gender];
-        }
-
-        if (isset($filter)) {
-            $siswa = $siswa->where($filter);
-        }
-
-        if (!empty($search)) {
-            $siswa = $siswa->where(function($query) use ($search) {
-                $query->where('nis', 'like', "%$search%")
-                    ->orWhere('nama', 'like', "%$search%")
-                    ->orWhere('tempat_lahir', 'like', "%$search%")
-                    ->orWhere('tanggal_lahir', 'like', "%$search%");
-            });
-        }
-            
-        $siswa = $siswa->paginate(15);
-
-        return SiswaResource::collection($siswa);
-    }
-
     public function create(Request $request)
     {
         unset($request['foto']);
@@ -121,7 +80,7 @@ class SiswaController extends Controller
         $new_name = time().'.'.$file->getClientOriginalExtension();
         $file->move($this->path, $new_name);
 
-        if ($siswa->foto != null) {
+        if ($siswa->foto != null && $guru->foto != 'logo.png') {
             unlink($this->path.$siswa->foto);
         }
 

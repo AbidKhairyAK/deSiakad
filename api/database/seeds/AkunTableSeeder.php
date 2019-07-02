@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory;
 
-class PenggunaTableSeeder extends Seeder
+class AkunTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class PenggunaTableSeeder extends Seeder
         for ($i=1; $i <= 10; $i++) { 
         	$data[$i] = [
                 'id_guru' => $i % 2 ? $i : null,
-                'nama' => $faker->name(),
+                'username' => $faker->name(),
                 'email' => $faker->freeEmail,
                 'password' => app('hash')->make('secret'),
         		'created_at' => $faker->date(),
@@ -26,7 +26,7 @@ class PenggunaTableSeeder extends Seeder
         	];
         }
 
-        DB::table('pengguna')->truncate();
-        DB::table('pengguna')->insert($data);
+        DB::table('akun')->truncate();
+        DB::table('akun')->insert($data);
     }
 }

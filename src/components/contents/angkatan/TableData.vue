@@ -30,10 +30,5 @@
 	export default {
 		name: 'TableData',
 		props: ['items'],
-		filters: {
-			boolText(value) {
-				return value ? 'Aktif' : 'Tidak Aktif';
-			}
-		}
 	}
 </script>

@@ -27,7 +27,7 @@ class MakeRelation extends Migration
             $table->foreign('id_agama')->references('id')->on('agama');
         });
 
-        Schema::table('pengguna', function (Blueprint $table) {
+        Schema::table('akun', function (Blueprint $table) {
             $table->foreign('id_guru')->references('id')->on('guru');
         });
 

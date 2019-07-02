@@ -24,8 +24,9 @@ let vee_config = {
 		required: "kolom {attribute} harus terisi!",
 		email: "kolom {attribute} harus berupa email!",
 		maxLength: "kolom {attribute} melebihi batas maksimal karakter!",
+		sameAsPass: "kolom {attribute} harus sama dengan password!",
 	}
-}
+};
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
@@ -36,6 +37,7 @@ Vue.prototype.$axios = axios;
 Vue.prototype.$_ = lodash;
 Vue.prototype.$qs = qs;
 Vue.prototype.$url = 'http://localhost:8000';
+// Vue.prototype.$url = 'http://209.97.169.78:88/api';
 Vue.prototype.$url_config = url_config;
 
 Vue.component('box', Box);
@@ -45,3 +47,10 @@ Vue.component('modal', Modal);
 Vue.component('file-select', FileSelect);
 Vue.component('form-wrapper', templates.FormWrapper);
 Vue.component("form-field", FormField);
+
+Vue.filter('boolText', function(value) {
+	return value ? 'Aktif' : 'Tidak Aktif';
+});
+Vue.filter('genderText', function(value) {
+	return value == 'L' ? 'Laki-laki' : 'Perempuan';
+});

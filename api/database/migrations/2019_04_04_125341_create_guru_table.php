@@ -18,6 +18,7 @@ class CreateGuruTable extends Migration
             $table->unsignedTinyInteger('id_agama');
             $table->string('nik', 16)->unique();
             $table->string('nuptk', 16)->unique()->nullable();
+            $table->string('nama', 100);
             $table->enum('gender', ['L', 'P']);
             $table->string('foto', 20)->nullable();
             $table->boolean('status');

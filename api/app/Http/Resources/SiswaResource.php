@@ -21,7 +21,6 @@ class SiswaResource extends Resource
             'nis' => $this->nis,
             'nama' => $this->nama,
             'gender' => $this->gender,
-            'full_gender' => $this->gender == 'L' ? 'Laki-laki' : 'Perempuan',
             'tempat_lahir' => $this->tempat_lahir,
             'tanggal_lahir' => $this->tanggal_lahir,
             'foto' => $this->foto,

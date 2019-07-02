@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePenggunaTable extends Migration
+class CreateAkunTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePenggunaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengguna', function (Blueprint $table) {
+        Schema::create('akun', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->unsignedSmallInteger('id_guru')->nullable();
-            $table->string('nama', 50);
+            $table->string('username', 50);
             $table->string('email', 50);
             $table->string('password', 60);
             $table->timestamps();

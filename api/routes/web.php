@@ -15,7 +15,6 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/siswa', 'SiswaController@index');
-$router->get('/siswa/peserta-didik', 'SiswaController@pesertaDidik');
 $router->post('/siswa/create', 'SiswaController@create');
 $router->post('/siswa/{id}/update', 'SiswaController@update');
 $router->post('/siswa/{id}/add-foto', 'SiswaController@addFoto');
@@ -63,9 +62,18 @@ $router->post('/angkatan/create', 'AngkatanController@create');
 $router->post('/angkatan/{id}/update', 'AngkatanController@update');
 $router->delete('/angkatan/{id}/destroy', 'AngkatanController@destroy');
 
+$router->get('/guru', 'GuruController@index');
+$router->post('/guru/create', 'GuruController@create');
+$router->post('/guru/{id}/update', 'GuruController@update');
+$router->post('/guru/{id}/add-foto', 'GuruController@addFoto');
+$router->delete('/guru/{id}/destroy', 'GuruController@destroy');
+
 $router->get('/jadwal-editor', 'JadwalEditorController@index');
 $router->post('/jadwal-editor/save', 'JadwalEditorController@save');
 $router->post('/jadwal-editor/destroy', 'JadwalEditorController@destroy');
+
+$router->post('/akun/check/{identity}', 'AkunController@check');
+$router->post('/akun/register', 'AkunController@register');
 
 $router->get('/menu', 'MenuController@index');
 
@@ -73,7 +81,6 @@ $router->get('/agama/list', 'AgamaController@list');
 $router->get('/jam/list', 'JamController@list');
 $router->get('/hari/list', 'HariController@list');
 
-$router->get('/guru', 'GuruController@index');
 $router->get('/jadwal', 'JadwalController@index');
 $router->get('/kurikulum-detail', 'KurikulumDetailController@index');
 $router->get('/pengguna', 'PenggunaController@index');

@@ -36,7 +36,7 @@ class JadwalEditorController extends Controller
             $jadwal->id_jam_selesai = $request->id_jam_selesai;
             $jadwal->id_mapel       = $data['id_mapel'];
             $jadwal->id_guru        = !empty($data['id_guru']) ? $data['id_guru'] : null;
-            $jadwal->id_ruangan        = !empty($data['id_ruangan']) ? $data['id_ruangan'] : null;
+            $jadwal->id_ruangan     = !empty($data['id_ruangan']) ? $data['id_ruangan'] : null;
             $jadwal->id_hari        = $data['id_hari'];
             $jadwal->save();
         }

@@ -14,7 +14,7 @@
 		</div>
 		<div class="row mb-2">
 			<span class="col-md-4 font-weight-bold">Gender</span>
-			<span class="col-md-8">: {{ detail.full_gender }}</span>
+			<span class="col-md-8">: {{ detail.gender | genderText }}</span>
 		</div>
 		<div class="row mb-2">
 			<span class="col-md-4 font-weight-bold">Tempat Lahir</span>

@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call('JadwalTableSeeder');
         $this->call('RombelTableSeeder');
         $this->call('WalikelasTableSeeder');
-        $this->call('PenggunaTableSeeder');
+        $this->call('AkunTableSeeder');
     
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

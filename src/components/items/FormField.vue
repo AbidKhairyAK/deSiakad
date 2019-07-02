@@ -1,8 +1,8 @@
 <template>
 	<div class="form-group" :class="[{ 'isError': hasErrors, 'isSuccess': isValid }, grid]">
-		<label class="font-weight-bold small">{{ label }}:</label>
+		<label v-if="label" class="font-weight-bold small">{{ label }}:</label>
 		<slot></slot>
-		<p class="text-danger small" v-if="hasErrors">
+		<p class="text-danger small" :class="{'text-center': center_error}" v-if="hasErrors">
 			<span v-for="error in activeErrorMessages" :key="error">{{ error }}</span>
 		</p>
 	</div>
@@ -13,7 +13,10 @@
 
 	export default {
 		name: 'FormField',
-		props: ['grid'],
+		props: {
+			grid: {default: 'col-sm-12'},
+			center_error: Boolean
+		},
 		mixins: [singleErrorExtractorMixin],
 	}
 </script>
