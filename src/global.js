@@ -36,8 +36,8 @@ Vue.use(VuelidateErrorExtractor, vee_config);
 Vue.prototype.$axios = axios;
 Vue.prototype.$_ = lodash;
 Vue.prototype.$qs = qs;
-Vue.prototype.$url = 'http://localhost:8000';
-// Vue.prototype.$url = 'http://209.97.169.78:88/api';
+// Vue.prototype.$url = 'http://localhost:8000';
+Vue.prototype.$url = 'http://209.97.169.78:92/api';
 Vue.prototype.$url_config = url_config;
 
 Vue.component('box', Box);
