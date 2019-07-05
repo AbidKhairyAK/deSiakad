@@ -23,6 +23,7 @@ class SiswaResource extends Resource
             'gender' => $this->gender,
             'tempat_lahir' => $this->tempat_lahir,
             'tanggal_lahir' => $this->tanggal_lahir,
+            'status' => $this->status,
             'foto' => $this->foto,
             'angkatan' => $this->angkatan->tahun,
             'agama' => $this->agama->nama,

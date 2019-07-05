@@ -23,6 +23,7 @@ class CreateSiswaTable extends Migration
             $table->enum('gender', ['L', 'P']);
             $table->date('tanggal_lahir');
             $table->string('tempat_lahir', 30);
+            $table->boolean('status');
             $table->string('foto', 20)->nullable();
             $table->timestamps();
         });

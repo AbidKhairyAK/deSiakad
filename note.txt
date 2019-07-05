@@ -3,7 +3,7 @@
 	- tambahkan fitur orderby
 	- tambahkan fitur absensi murid (next version)
 	- tambahkan fitur keuangan (next version)
-		- pembayaran sppl
+		- pembayaran spp
 		- keuangan sekolah
 	- tambahkan fitur SMS dan WA (next version)
 

@@ -6,7 +6,8 @@
 				<th width="140">NIS</th>
 				<th>Nama Siswa</th>
 				<th>Rombel</th>
-				<th width="100">Gender</th>
+				<th>Angkatan</th>
+				<th>Gender</th>
 				<th width="50">Opsi</th>
 			</tr>
 		</thead>
@@ -16,9 +17,10 @@
 				<td>{{ item.nis }}</td>
 				<td>{{ item.nama }}</td>
 				<td>{{ item.rombel }}</td>
+				<td>{{ item.angkatan }}</td>
 				<td>{{ item.gender }}</td>
 				<td class="d-flex justify-content-between">
-					<button class="btn btn-circle btn-sm" @click="$emit('openModal', {mode: 'detail', item})">
+					<button class="btn btn-circle btn-sm btn-success" @click="$emit('openModal', {mode: 'detail', item})">
 						<i class="fa fa-address-card"></i>
 					</button>
 				</td>

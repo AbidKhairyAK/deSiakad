@@ -6,7 +6,8 @@
 				<th width="180">NUPTK</th>
 				<th>Nama Guru</th>
 				<th>Gender</th>
-				<th width="100">Opsi</th>
+				<th>Status</th>
+				<th width="120">Opsi</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -15,14 +16,15 @@
 				<td>{{ item.nuptk }}</td>
 				<td>{{ item.nama }}</td>
 				<td>{{ item.gender }}</td>
+				<td>{{ item.status | boolText }}</td>
 				<td class="d-flex justify-content-between">
-					<button class="btn btn-circle btn-sm" @click="$emit('openModal', {mode: 'detail', item})">
+					<button class="btn btn-circle btn-sm btn-success" @click="$emit('openModal', {mode: 'detail', item})">
 						<i class="fa fa-address-card"></i>
 					</button>
-					<button class="btn btn-circle btn-sm" @click="$emit('openModal', {mode: 'edit', item})">
+					<button class="btn btn-circle btn-sm btn-info" @click="$emit('openModal', {mode: 'edit', item})">
 						<i class="fa fa-edit"></i>
 					</button>
-					<button class="btn btn-circle btn-sm" @click="$emit('destroyData', item.id)">
+					<button class="btn btn-circle btn-sm btn-danger" @click="$emit('destroyData', item.id)">
 						<i class="fa fa-trash"></i>
 					</button>
 				</td>

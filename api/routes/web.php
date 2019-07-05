@@ -63,10 +63,14 @@ $router->post('/angkatan/{id}/update', 'AngkatanController@update');
 $router->delete('/angkatan/{id}/destroy', 'AngkatanController@destroy');
 
 $router->get('/guru', 'GuruController@index');
+$router->get('/guru/list', 'GuruController@list');
 $router->post('/guru/create', 'GuruController@create');
 $router->post('/guru/{id}/update', 'GuruController@update');
 $router->post('/guru/{id}/add-foto', 'GuruController@addFoto');
 $router->delete('/guru/{id}/destroy', 'GuruController@destroy');
+
+$router->get('/walikelas', 'WalikelasController@index');
+$router->post('/walikelas/sync', 'WalikelasController@sync');
 
 $router->get('/jadwal-editor', 'JadwalEditorController@index');
 $router->post('/jadwal-editor/save', 'JadwalEditorController@save');
@@ -85,4 +89,3 @@ $router->get('/jadwal', 'JadwalController@index');
 $router->get('/kurikulum-detail', 'KurikulumDetailController@index');
 $router->get('/pengguna', 'PenggunaController@index');
 $router->get('/sekolah', 'SekolahController@index');
-$router->get('/walikelas', 'WalikelasController@index');

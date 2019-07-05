@@ -12,18 +12,18 @@ class Rombel extends Model
     	'kode', 'nama', 'kelas'
     ];
 
-    // public function jadwal()
-    // {
-    // 	return $this->hasMany(Jadwal::class, 'id_rombel');
-    // }
+    public function jadwal()
+    {
+    	return $this->hasMany(Jadwal::class, 'id_rombel');
+    }
 
-    // public function walikelas()
-    // {
-    // 	return $this->hasMany(Walikelas::class, 'id_rombel');
-    // }
+    public function guru()
+    {
+    	return $this->belongsToMany(Guru::class, 'walikelas', 'id_rombel', 'id_guru');
+    }
 
-    // public function siswa()
-    // {
-    // 	return $this->hasMany(Siswa::class, 'id_rombel');
-    // }
+    public function siswa()
+    {
+    	return $this->hasMany(Siswa::class, 'id_rombel');
+    }
 }

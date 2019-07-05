@@ -14,10 +14,11 @@ class WalikelasTableSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create('cs_CZ');
+        $guru = app('db')->table('guru')->where('status', 1)->pluck('id');
 
         for ($i=1; $i <= 10; $i++) { 
         	$data[$i] = [
-                'id_guru' => rand(1, 10),
+                'id_guru' => $faker->randomElement($guru),
                 'id_rombel' => $i,
         		'created_at' => $faker->date(),
         		'updated_at' => $faker->date(),

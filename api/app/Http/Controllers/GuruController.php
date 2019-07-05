@@ -15,6 +15,13 @@ class GuruController extends Controller
         $this->path = public_path().'/../../src/assets/guru/';;
     }
 
+    public function list()
+    {
+        $guru = app('db')->table('guru')->where('status', 1)->orderBy('id')->get();
+
+        return response()->json($guru);
+    }
+
     public function index(Request $request)
     {
         $status = $request->get('status');
@@ -23,7 +30,7 @@ class GuruController extends Controller
         $search = $request->get('search');
 
         $guru = Guru::with('agama')
-            ->orderBy('nama');
+            ->orderBy('status', 'desc')->orderBy('nama');
 
         if (!empty($status) || $status === '0') {
             $filter[] = [ 'status', '=', $status];

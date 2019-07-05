@@ -22,7 +22,7 @@
 					<tr> 
 						<th width="180">Jam</th>
 						<th v-for="(item, i) in option.hari" :key="i">{{ item.nama }}</th>
-						<th width="80">Opsi</th>
+						<th width="90">Opsi</th>
 					</tr>
 				</thead>
 				<tbody v-for="(item, i) in api.data" :key="'tr'+i" class="border-0">
@@ -51,10 +51,10 @@
 							</span>
 						</td>
 						<td class="d-flex justify-content-between">
-							<button class="btn btn-circle btn-sm" title="edit" @click="mode = item.id">
+							<button class="btn btn-circle btn-sm btn-info" title="edit" @click="mode = item.id">
 								<i class="fa fa-edit"></i>
 							</button>
-							<button class="btn btn-circle btn-sm" title="hapus" @click="delData(item)">
+							<button class="btn btn-circle btn-sm btn-danger" title="hapus" @click="delData(item)">
 								<i class="fa fa-trash"></i>
 							</button>
 						</td>
@@ -70,7 +70,7 @@
 					></jadwal-form>
 					<tr v-else>
 						<td colspan="8">
-							<button class="btn btn-light btn-block text-black-50" @click="mode = 'create'">
+							<button class="btn btn-primary btn-block" @click="mode = 'create'">
 								<i class="fa fa-plus"></i> Tambah Baru
 							</button>	
 						</td>

@@ -32,6 +32,10 @@
 			<span class="col-md-4 font-weight-bold">Angkatan</span>
 			<span class="col-md-8">: {{ detail.angkatan }}</span>
 		</div>
+		<div class="row mb-2">
+			<span class="col-md-4 font-weight-bold">Status</span>
+			<span class="col-md-8">: {{ detail.status | boolText }}</span>
+		</div>
 	</modal>
 </template>
 

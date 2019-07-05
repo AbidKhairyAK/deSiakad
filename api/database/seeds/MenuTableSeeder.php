@@ -109,27 +109,27 @@ class MenuTableSeeder extends Seeder
                 'submenu' => 2
             ],
             [
-                'nama' => 'Daftar Siswa',
-                'link' => '/siswa',
-                'icon' => 'fa-users',
-                'submenu' => 3
-            ],
-            [
                 'nama' => 'Peserta Didik',
                 'link' => '/peserta-didik',
                 'icon' => 'fa-pencil-alt',
                 'submenu' => 3
             ],
             [
-                'nama' => 'Daftar Guru',
-                'link' => '/guru',
-                'icon' => 'fa-graduation-cap',
+                'nama' => 'Seluruh Siswa',
+                'link' => '/siswa',
+                'icon' => 'fa-users',
+                'submenu' => 3
+            ],
+            [
+                'nama' => 'Walikelas',
+                'link' => '/walikelas',
+                'icon' => 'fa-users',
                 'submenu' => 4
             ],
             [
-                'nama' => 'Wali Kelas',
-                'link' => '/walikelas',
-                'icon' => 'fa-users',
+                'nama' => 'Seluruh Guru',
+                'link' => '/guru',
+                'icon' => 'fa-graduation-cap',
                 'submenu' => 4
             ],
             [

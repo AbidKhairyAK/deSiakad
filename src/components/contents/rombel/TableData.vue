@@ -6,7 +6,7 @@
 				<th width="100">Kode</th>
 				<th>Nama Rombel</th>
 				<th>Kelas</th>
-				<th width="80">Opsi</th>
+				<th width="90">Opsi</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -16,10 +16,10 @@
 				<td>{{ item.nama }}</td>
 				<td>{{ item.kelas }}</td>
 				<td class="d-flex justify-content-between">
-					<button class="btn btn-circle btn-sm" @click="$emit('openModal', {mode: 'edit', item})">
+					<button class="btn btn-circle btn-sm btn-info" @click="$emit('openModal', {mode: 'edit', item})">
 						<i class="fa fa-edit"></i>
 					</button>
-					<button class="btn btn-circle btn-sm" @click="$emit('destroyData', item.id)">
+					<button class="btn btn-circle btn-sm btn-danger" @click="$emit('destroyData', item.id)">
 						<i class="fa fa-trash"></i>
 					</button>
 				</td>

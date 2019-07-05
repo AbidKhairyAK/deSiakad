@@ -24,10 +24,10 @@
 			</select>
 		</td>
 		<td class="d-flex justify-content-between">
-			<button class="btn btn-circle btn-sm" title="simpan" @click="$emit('submit', form)">
+			<button class="btn btn-circle btn-sm btn-success" title="simpan" @click="$emit('submit', form)">
 				<i class="fa fa-check"></i>
 			</button>
-			<button class="btn btn-circle btn-sm" title="batal" @click="$emit('cancel')">
+			<button class="btn btn-circle btn-sm btn-danger" title="batal" @click="$emit('cancel')">
 				<i class="fa fa-times"></i>
 			</button>
 		</td>
