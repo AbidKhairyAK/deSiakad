@@ -70,7 +70,7 @@
 <script>
 	import { required, maxLength, email } from 'vuelidate/lib/validators';
 
-	function sameAsPass (value, vm) { return value == this.form.password; }
+	function sameAsPass (value) { return value == this.form.password; }
 
 	export default {
 		data: () => ({

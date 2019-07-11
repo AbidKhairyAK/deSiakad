@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import Vuelidate from 'vuelidate';
 import VuelidateErrorExtractor, { templates } from 'vuelidate-error-extractor';
+import VCalendar from 'v-calendar';
 
 import axios from 'axios';
 import lodash from 'lodash';
@@ -15,11 +16,11 @@ import Modal from '@/components/items/Modal';
 import FileSelect from '@/components/items/FileSelect';
 import FormField from '@/components/items/FormField';
 
-let url_config = {
+const url_config = {
 	'accept': 'application/json',
 	'content-type': 'application/x-www-form-urlencoded'
 };
-let vee_config = {
+const vee_config = {
 	messages: {
 		required: "kolom {attribute} harus terisi!",
 		email: "kolom {attribute} harus berupa email!",
@@ -27,11 +28,15 @@ let vee_config = {
 		sameAsPass: "kolom {attribute} harus sama dengan password!",
 	}
 };
+const vc_config = {
+	locale: 'id-ID'
+};
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
 Vue.use(VuelidateErrorExtractor, vee_config);
+Vue.use(VCalendar, vc_config);
 
 Vue.prototype.$axios = axios;
 Vue.prototype.$_ = lodash;

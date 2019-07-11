@@ -7,6 +7,7 @@ import ERR404 from '@/components/top-level/ERR404.vue';
 import Login from '@/components/contents/auth/Login';
 import Register from '@/components/contents/auth/Register';
 
+import Beranda from '@/components/contents/beranda/Index';
 import PesertaDidik from '@/components/contents/peserta-didik/Index';
 import TahunAkademik from '@/components/contents/tahun-akademik/Index';
 import Angkatan from '@/components/contents/angkatan/Index';
@@ -30,6 +31,7 @@ const routes = [
 	]},
 
 	{path: '/app', component: Main, children: [
+		{path: '/beranda', component: Beranda},
 		{path: '/peserta-didik', component: PesertaDidik},
 		{path: '/tahun-akademik', component: TahunAkademik},
 		{path: '/angkatan', component: Angkatan},

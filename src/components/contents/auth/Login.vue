@@ -39,7 +39,7 @@
 	export default {
 		methods: {
 			sendData() {
-				this.$router.push('siswa');
+				this.$router.push('beranda');
 			}
 		}
 	}
