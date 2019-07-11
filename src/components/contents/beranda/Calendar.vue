@@ -13,7 +13,7 @@
 				{description: 'hmmm...', dates: new Date(2019, 6, 8)},
 				{description: 'hmmm...', dates: new Date(2019, 6, 11)},
 				{description: 'hmmm...', dates: new Date(2019, 6, 21)},
-				{description: 'ehemm...', dates: new Date(2019, 6, 21)},
+				{description: 'ehem...', dates: new Date(2019, 6, 21)},
 			],
 		}),
 		computed: {
