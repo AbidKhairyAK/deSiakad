@@ -19,7 +19,12 @@ class Jadwal extends Model
 
     public function mapel()
     {
-    	return $this->belongsTo(Mapel::class, 'id_mapel');
+        return $this->belongsTo(Mapel::class, 'id_mapel');
+    }
+
+    public function guru()
+    {
+        return $this->belongsTo(Guru::class, 'id_guru');
     }
 
     public function ruangan()

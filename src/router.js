@@ -18,6 +18,7 @@ import Rombel from '@/components/contents/rombel/Index';
 import Kurikulum from '@/components/contents/kurikulum/Index';
 import Guru from '@/components/contents/guru/Index';
 import Walikelas from '@/components/contents/walikelas/Index';
+import Jadwal from '@/components/contents/jadwal/Index';
 
 import PesertaDidikEditor from '@/components/contents/editors/PesertaDidikEditor';
 import JadwalPelajaranEditor from '@/components/contents/editors/JadwalPelajaranEditor';
@@ -42,6 +43,7 @@ const routes = [
 		{path: '/rombel', component: Rombel},
 		{path: '/guru', component: Guru},
 		{path: '/walikelas', component: Walikelas},
+		{path: '/jadwal', component: Jadwal},
 
 		{path: '/peserta-didik-editor', component: PesertaDidikEditor},
 		{path: '/jadwal-pelajaran-editor', component: JadwalPelajaranEditor},

@@ -23,7 +23,7 @@ class JadwalEditorResource extends Resource
             "rombel"        => $this->rombel->nama, 
             "kdmapel"       => $this->mapel->kode,
             "mapel"         => $this->mapel->nama,
-            "guru"          => $this->id_guru,
+            "guru"          => $this->guru ? $this->guru->nama : '-',
             "ruangan"       => $this->ruangan ? $this->ruangan->nama : '-', 
             "hari"          => $this->hari->nama,
         ];

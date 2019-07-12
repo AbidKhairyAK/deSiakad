@@ -76,6 +76,11 @@ $router->get('/jadwal-editor', 'JadwalEditorController@index');
 $router->post('/jadwal-editor/save', 'JadwalEditorController@save');
 $router->post('/jadwal-editor/destroy', 'JadwalEditorController@destroy');
 
+$router->get('/jadwal', 'JadwalController@index');
+$router->post('/jadwal/create', 'JadwalController@create');
+$router->post('/jadwal/{id}/update', 'JadwalController@update');
+$router->delete('/jadwal/{id}/destroy', 'JadwalController@destroy');
+
 $router->post('/akun/check/{identity}', 'AkunController@check');
 $router->post('/akun/register', 'AkunController@register');
 
@@ -85,7 +90,6 @@ $router->get('/agama/list', 'AgamaController@list');
 $router->get('/jam/list', 'JamController@list');
 $router->get('/hari/list', 'HariController@list');
 
-$router->get('/jadwal', 'JadwalController@index');
 $router->get('/kurikulum-detail', 'KurikulumDetailController@index');
 $router->get('/pengguna', 'PenggunaController@index');
 $router->get('/sekolah', 'SekolahController@index');
