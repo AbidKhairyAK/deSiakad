@@ -21,6 +21,7 @@ $router->post('/siswa/{id}/add-foto', 'SiswaController@addFoto');
 $router->delete('/siswa/{id}/destroy', 'SiswaController@destroy');
 
 $router->get('/peserta-didik', 'PesertaDidikController@index');
+$router->get('/peserta-didik/list', 'PesertaDidikController@list');
 $router->get('/peserta-didik/punya-rombel', 'PesertaDidikController@punya_rombel');
 $router->get('/peserta-didik/semua-siswa', 'PesertaDidikController@semua_siswa');
 $router->post('/peserta-didik/push', 'PesertaDidikController@push');
@@ -81,6 +82,20 @@ $router->post('/jadwal/create', 'JadwalController@create');
 $router->post('/jadwal/{id}/update', 'JadwalController@update');
 $router->delete('/jadwal/{id}/destroy', 'JadwalController@destroy');
 
+$router->get('/jenis-pembayaran', 'JenisPembayaranController@index');
+$router->get('/jenis-pembayaran/list', 'JenisPembayaranController@list');
+$router->post('/jenis-pembayaran/create', 'JenisPembayaranController@create');
+$router->post('/jenis-pembayaran/{id}/update', 'JenisPembayaranController@update');
+$router->delete('/jenis-pembayaran/{id}/destroy', 'JenisPembayaranController@destroy');
+
+$router->get('/pembayaran', 'PembayaranController@index');
+$router->post('/pembayaran/create', 'PembayaranController@create');
+$router->post('/pembayaran/{id}/update', 'PembayaranController@update');
+$router->delete('/pembayaran/{id}/destroy', 'PembayaranController@destroy');
+
+$router->get('/sekolah', 'SekolahController@index');
+$router->post('/sekolah/save', 'SekolahController@save');
+
 $router->post('/akun/check/{identity}', 'AkunController@check');
 $router->post('/akun/register', 'AkunController@register');
 
@@ -92,4 +107,3 @@ $router->get('/hari/list', 'HariController@list');
 
 $router->get('/kurikulum-detail', 'KurikulumDetailController@index');
 $router->get('/pengguna', 'PenggunaController@index');
-$router->get('/sekolah', 'SekolahController@index');

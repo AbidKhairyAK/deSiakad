@@ -19,6 +19,9 @@ import Kurikulum from '@/components/contents/kurikulum/Index';
 import Guru from '@/components/contents/guru/Index';
 import Walikelas from '@/components/contents/walikelas/Index';
 import Jadwal from '@/components/contents/jadwal/Index';
+import Sekolah from '@/components/contents/sekolah/Index';
+import JenisPembayaran from '@/components/contents/jenis-pembayaran/Index';
+import Pembayaran from '@/components/contents/pembayaran/Index';
 
 import PesertaDidikEditor from '@/components/contents/editors/PesertaDidikEditor';
 import JadwalPelajaranEditor from '@/components/contents/editors/JadwalPelajaranEditor';
@@ -44,6 +47,9 @@ const routes = [
 		{path: '/guru', component: Guru},
 		{path: '/walikelas', component: Walikelas},
 		{path: '/jadwal', component: Jadwal},
+		{path: '/sekolah', component: Sekolah},
+		{path: '/jenis-pembayaran', component: JenisPembayaran},
+		{path: '/pembayaran', component: Pembayaran},
 
 		{path: '/peserta-didik-editor', component: PesertaDidikEditor},
 		{path: '/jadwal-pelajaran-editor', component: JadwalPelajaranEditor},

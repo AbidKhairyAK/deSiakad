@@ -10,6 +10,12 @@ use App\Http\Resources\SiswaResource;
 
 class PesertaDidikController extends Controller
 {
+    public function list()
+    {
+        $siswa = app('db')->table('siswa')->select('id', 'nama as label')->whereNotNull('id_rombel')->orderBy('nama')->get();
+        return response()->json($siswa);
+    }
+
     public function index(Request $request)
     {
         $rombel = $request->get('rombel');

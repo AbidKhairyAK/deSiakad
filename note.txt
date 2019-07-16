@@ -8,24 +8,12 @@
 	- tambahkan fitur SMS dan WA (next version)
 
 # Uncompleted Page
-	- Beranda
-	- Daftar guru
-	- walikelas
-	- sekolah
-	- jadwal pelajaran
+	- sekolah -
 	- laporan nilai
 	- daftar akun
 	- hak akses
 
 # Things that need to Think
-	- field yg perlu nullable?
-	- tb walikelas dan guru digabung?
-	- tampilan beranda?
 	- Sistem rapor? (ambil data dari MIA)
 
 # doing
-	- revisi tabel guru dan pengguna
-	- daftar guru akan diisi oleh operator / admin
-	- guru hanya dapat memiliki akun apabila data nya terdaftar di sistem
-	- pengecekan NUPTK / NIK dan Status akan dilakukan sebelum guru membuat akun
-	- akun dari guru yang sudah tidak aktif akan otomatis terhapus

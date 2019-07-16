@@ -21,6 +21,12 @@ class MenuTableSeeder extends Seeder
                 'submenu' => 0
             ],
             [
+                'nama' => 'Data Sekolah',
+                'link' => '/sekolah',
+                'icon' => 'fa-building',
+                'submenu' => 0
+            ],
+            [
         		'nama' => 'Data Master',
         		'link' => '#',
                 'icon' => 'fa-bars',
@@ -38,26 +44,30 @@ class MenuTableSeeder extends Seeder
                 'icon' => 'fa-graduation-cap',
                 'submenu' => 0
             ],
-
-            // Independents
-            [
-                'nama' => 'Data Sekolah',
-                'link' => '/sekolah',
-                'icon' => 'fa-building',
-                'submenu' => 0
-            ],
         	[
         		'nama' => 'Jadwal Pelajaran',
         		'link' => '/jadwal',
         		'icon' => 'fa-calendar',
         		'submenu' => 0
         	],
-        	[
-        		'nama' => 'Laporan Nilai',
-        		'link' => '/laporan',
-        		'icon' => 'fa-file-excel',
-        		'submenu' => 0
-        	],
+            [
+                'nama' => 'Laporan Nilai',
+                'link' => '/laporan',
+                'icon' => 'fa-file-excel',
+                'submenu' => 0
+            ],
+            [
+                'nama' => 'Pembayaran',
+                'link' => '#',
+                'icon' => 'fa-money-bill-wave',
+                'submenu' => 0
+            ],
+            [
+                'nama' => 'Kirim Pesan',
+                'link' => '#',
+                'icon' => 'fa-envelope',
+                'submenu' => 0
+            ],
             [
                 'nama' => 'Editor',
                 'link' => '#',
@@ -65,7 +75,7 @@ class MenuTableSeeder extends Seeder
                 'submenu' => 0
             ],
             [
-                'nama' => 'Pengaturan',
+                'nama' => 'Konfigurasi',
                 'link' => '#',
                 'icon' => 'fa-cog',
                 'submenu' => 0
@@ -76,85 +86,121 @@ class MenuTableSeeder extends Seeder
                 'nama' => 'Mata Pelajaran',
                 'link' => '/mapel',
                 'icon' => 'fa-book',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Ruangan Kelas',
                 'link' => '/ruangan',
                 'icon' => 'fa-building',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Tahun Akademik',
                 'link' => '/tahun-akademik',
                 'icon' => 'fa-calendar-alt',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Angkatan',
                 'link' => '/angkatan',
                 'icon' => 'fa-list-alt',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Rombongan Belajar',
                 'link' => '/rombel',
                 'icon' => 'fa-users',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Kurikulum',
                 'link' => '/kurikulum',
                 'icon' => 'fa-newspaper',
-                'submenu' => 2
+                'submenu' => 3
             ],
             [
                 'nama' => 'Peserta Didik',
                 'link' => '/peserta-didik',
                 'icon' => 'fa-pencil-alt',
-                'submenu' => 3
+                'submenu' => 4
             ],
             [
                 'nama' => 'Seluruh Siswa',
                 'link' => '/siswa',
                 'icon' => 'fa-users',
-                'submenu' => 3
+                'submenu' => 4
             ],
             [
                 'nama' => 'Walikelas',
                 'link' => '/walikelas',
                 'icon' => 'fa-users',
-                'submenu' => 4
+                'submenu' => 5
             ],
             [
                 'nama' => 'Seluruh Guru',
                 'link' => '/guru',
                 'icon' => 'fa-graduation-cap',
-                'submenu' => 4
+                'submenu' => 5
+            ],
+            [
+                'nama' => 'Data Pembayaran',
+                'link' => '/pembayaran',
+                'icon' => 'fa-money-check-alt',
+                'submenu' => 8
+            ],
+            [
+                'nama' => 'Jenis Pembayaran',
+                'link' => '/jenis-pembayaran',
+                'icon' => 'fa-dollar-sign',
+                'submenu' => 8
+            ],
+            [
+                'nama' => 'Form Pesan',
+                'link' => '/form-pesan',
+                'icon' => 'fa-comments',
+                'submenu' => 9
+            ],
+            [
+                'nama' => 'Template Pesan',
+                'link' => '/template-pesan',
+                'icon' => 'fa-sticky-note',
+                'submenu' => 9
+            ],
+            [
+                'nama' => 'Kontak',
+                'link' => '/kontak',
+                'icon' => 'fa-address-book',
+                'submenu' => 9
+            ],
+            [
+                'nama' => 'Grup Kontak',
+                'link' => '/grup-kontak',
+                'icon' => 'fa-layer-group',
+                'submenu' => 9
             ],
             [
                 'nama' => 'Peserta Didik Editor',
                 'link' => '/peserta-didik-editor',
                 'icon' => 'fa-pencil-alt',
-                'submenu' => 8
+                'submenu' => 10
             ],
             [
                 'nama' => 'Jadwal Pelajaran Editor',
                 'link' => '/jadwal-pelajaran-editor',
                 'icon' => 'fa-calendar',
-                'submenu' => 8
+                'submenu' => 10
             ],
             [
                 'nama' => 'Pengguna Sistem',
                 'link' => '/pengguna',
                 'icon' => 'fa-cubes',
-                'submenu' => 9
+                'submenu' => 11
             ],
             [
                 'nama' => 'Hak Akses',
                 'link' => '/hak-akses',
                 'icon' => 'fa-lock',
-                'submenu' => 9
+                'submenu' => 11
             ],
         ];
 

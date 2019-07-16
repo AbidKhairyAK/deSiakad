@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
         $this->call('RombelTableSeeder');
         $this->call('WalikelasTableSeeder');
         $this->call('AkunTableSeeder');
+        $this->call('JenisPembayaranTableSeeder');
+        $this->call('PembayaranTableSeeder');
     
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
