@@ -15,6 +15,12 @@ class SiswaController extends Controller
         $this->path = public_path().'/../../src/assets/siswa/';;
     }
 
+    public function list()
+    {
+        $siswa = app('db')->table('siswa')->select('id', 'nama as label')->orderBy('nama')->get();
+        return response()->json($siswa);
+    }
+
     public function index(Request $request)
     {
         $angkatan = $request->get('angkatan');

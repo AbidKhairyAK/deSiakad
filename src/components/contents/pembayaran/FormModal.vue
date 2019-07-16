@@ -70,7 +70,7 @@
 
 		methods: {
 			getSelect() {
-				this.$axios.get(`${this.$url}/peserta-didik/list`).then((response) => {
+				this.$axios.get(`${this.$url}/siswa/list`).then((response) => {
 					this.select.siswa = response.data;
 				});
 				this.$axios.get(`${this.$url}/jenis-pembayaran/list`).then((response) => {

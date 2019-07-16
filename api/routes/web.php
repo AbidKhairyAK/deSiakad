@@ -15,6 +15,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/siswa', 'SiswaController@index');
+$router->get('/siswa/list', 'SiswaController@list');
 $router->post('/siswa/create', 'SiswaController@create');
 $router->post('/siswa/{id}/update', 'SiswaController@update');
 $router->post('/siswa/{id}/add-foto', 'SiswaController@addFoto');
