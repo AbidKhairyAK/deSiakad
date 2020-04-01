@@ -3,10 +3,13 @@
 
 		<!-- Sidebar - Brand -->
 		<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-			<div class="sidebar-brand-icon rotate-n-15">
+			<!-- <div class="sidebar-brand-icon rotate-n-15">
 				<i class="fas fa-book"></i>
+			</div> -->
+			<div class="sidebar-brand-icon">
+				<img src="@/assets/logo.png">
 			</div>
-			<div class="sidebar-brand-text mx-3">De Siakad <sup><i class="fas fa-heart rotate-15"></i></sup></div>
+			<div class="sidebar-brand-text mx-3">SIMCO <sup><i class="fas fa-heart rotate-15"></i></sup></div>
 		</a>
 
 		<!-- Divider -->
@@ -118,3 +121,19 @@
 		}
 	}
 </script>
+
+<style>
+	.sidebar-brand-icon {
+		border-radius: 20px;
+		overflow: hidden;
+		width: 30px;
+		height: 30px;
+		box-shadow: 0 0 5px #00000055;
+	}
+	.sidebar-brand-icon img {
+		width: 150%;
+		position: relative;
+		top: -5.5px;
+		left: -6.5px;
+	}
+</style>

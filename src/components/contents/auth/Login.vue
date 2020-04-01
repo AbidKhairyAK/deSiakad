@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="text-center">
-			<h1 class="h4 text-gray-900 mb-4">Form Login</h1>
+			<h1 class="h4 text-gray-900 mb-4">Sistem SIMCO</h1>
 		</div>
 		<form class="user" @submit.prevent="sendData()">
 			<div class="form-group">
@@ -15,7 +15,8 @@
 					<input type="checkbox" class="custom-control-input" id="customCheck">
 					<label class="custom-control-label" for="customCheck">Remember Me</label>
 				</div>
-				<router-link class="small" to="forget">Lupa password?</router-link>
+				<!-- <router-link class="small" to="forget">Lupa password?</router-link> -->
+				<a href="javascript:void(0)" class="small" to="forget">Lupa password?</a>
 			</div>
 
 			<button class="btn btn-primary btn-user btn-block">

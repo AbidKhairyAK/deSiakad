@@ -11,7 +11,9 @@
 						<div class="card-body p-0">
 							<!-- Nested Row within Card Body -->
 							<div class="row">
-								<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+								<div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center">
+									<img src="@/assets/logo.png" class="logo_ic">
+								</div>
 								<div class="col-lg-6">
 									<div class="p-5">
 										
@@ -44,5 +46,8 @@
 	.auth-enter, .auth-leave-to {
 		opacity: 0;
 		transform: scale(0.8, 0.8);
+	}
+	.logo_ic {
+		width: 90%;
 	}
 </style>

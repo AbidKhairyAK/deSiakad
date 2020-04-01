@@ -151,7 +151,7 @@
 			<!-- Nav Item - User Information -->
 			<li class="nav-item dropdown no-arrow">
 				<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+					<span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin SIMCO</span>
 					<img class="img-profile rounded-circle" :src="require('@/assets/logo.png')">
 				</a>
 				<!-- Dropdown - User Information -->
@@ -169,17 +169,17 @@
 						Activity Log
 					</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+					<router-link class="dropdown-item" to="/login">
 						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 						Logout
-					</a>
+					</router-link>
 				</div>
 			</li>
 
 		</ul>
 
 		<!-- Logout Modal-->
-		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -194,7 +194,7 @@
 						<a class="btn btn-primary" href="login.html">Logout</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 	</nav>
