@@ -7,13 +7,13 @@ return [
     /**
      * If CORS handling should be logged. Debugging feature.
      */
-    S::KEY_LOGS_ENABLED  => false,
+    S::KEY_LOGS_ENABLED         => false,
 
     /**
      * Could be string or array. If specified as array (recommended for better performance) it should
      * be in parse_url() result format.
      */
-    S::KEY_SERVER_ORIGIN => [
+    S::KEY_SERVER_ORIGIN        => [
         'scheme' => 'http',
         'host'   => 'localhost',
         'port'   => 8000,
@@ -25,12 +25,13 @@ return [
      * If value is not on the list it is considered as not allowed.
      * Environment variables could be used for enabling/disabling certain hosts.
      */
-    S::KEY_ALLOWED_ORIGINS => [
-        'http://localhost'         => true,
-        'http://localhost:8080'    => true,
-        'http://some.disabled.com' => null,
+    S::KEY_ALLOWED_ORIGINS      => [
+        'http://localhost'              => true,
+        'http://localhost:8080'         => true,
+        'http://siakad.mahirtechno.xyz' => true,
+        'http://some.disabled.com'      => null,
         // Enabling all origins might be insecure. Consider before using in production.
-        S::VALUE_ALLOW_ORIGIN_ALL  => null,
+        S::VALUE_ALLOW_ORIGIN_ALL       => null,
     ],
 
     /**
@@ -46,7 +47,7 @@ return [
      *
      * You can read more on 'simple' methods at http://www.w3.org/TR/cors/#simple-method
      */
-    S::KEY_ALLOWED_METHODS => [
+    S::KEY_ALLOWED_METHODS      => [
         'GET'    => true,
         'PATCH'  => true,
         'POST'   => true,
@@ -67,12 +68,12 @@ return [
      *
      * You can read more on 'simple' headers at http://www.w3.org/TR/cors/#simple-header
      */
-    S::KEY_ALLOWED_HEADERS => [
-        'accept'                    => true,
-        'content-type'              => true,
-        'x-custom-request-header'   => null,
+    S::KEY_ALLOWED_HEADERS      => [
+        'accept'                   => true,
+        'content-type'             => true,
+        'x-custom-request-header'  => null,
         // Enabling all headers might be insecure. Not recommended to use in production.
-        S::VALUE_ALLOW_ALL_HEADERS  => null,
+        S::VALUE_ALLOW_ALL_HEADERS => null,
     ],
 
     /**
@@ -88,7 +89,7 @@ return [
      *     'x-custom-response-header' => null,
      * ];
      */
-    S::KEY_EXPOSED_HEADERS => [
+    S::KEY_EXPOSED_HEADERS      => [
         'content-type'             => null,
         'x-custom-response-header' => null,
     ],
@@ -117,6 +118,6 @@ return [
     /**
      * If request 'Host' header should be checked against server's origin.
      */
-    S::KEY_IS_CHECK_HOST => false,
+    S::KEY_IS_CHECK_HOST        => false,
 
 ];
