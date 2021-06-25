@@ -42,7 +42,7 @@ Vue.prototype.$axios = axios;
 Vue.prototype.$_ = lodash;
 Vue.prototype.$qs = qs;
 // Vue.prototype.$url = 'http://localhost:8000';
-Vue.prototype.$url = 'http://siakad.mahirtechno.xyz/api';
+Vue.prototype.$url = 'https://siakad.mahirtechno.my.id/api';
 Vue.prototype.$url_config = url_config;
 
 Vue.component('box', Box);
